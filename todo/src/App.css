@@ -1,0 +1,25 @@
+.App-container--top {
+    height: 40%;
+    width: 100%;
+
+    background-color: blueviolet;
+} 
+
+.App-container--bottom {
+    height: 60%;
+    width: 100%;
+
+    background-color: black;
+}
+
+.App-container--middle {
+    position: relative;
+    bottom: 90%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: 20px auto;
+}
+
