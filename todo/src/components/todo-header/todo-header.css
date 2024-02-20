@@ -1,0 +1,13 @@
+header {
+    color: white;
+    display: flex;
+    justify-content: space-around;
+}
+
+header h1 {
+    font-size: 2rem;
+}
+
+header span {
+    font-size: 1rem;
+}
