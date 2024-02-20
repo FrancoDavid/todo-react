@@ -1,0 +1,9 @@
+section {
+    background-color: #25283D;
+    color: #AFB2CA;
+
+    padding: 16px;
+
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,25 +1,9 @@
-.App-container--top {
-    height: 40%;
-    width: 100%;
-
-    background-color: blueviolet;
-} 
-
-.App-container--bottom {
-    height: 60%;
-    width: 100%;
-
-    background-color: black;
-}
-
 .App-container--middle {
-    position: relative;
-    bottom: 90%;
 
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; */
+    padding: 40px 20px;
+    
+    height: 100vh; /* Esto hace que el contenedor ocupe el 100% del viewport */
+    background: linear-gradient(to bottom, purple 40%, black 40%); /* Gradiente lineal con el 40% de púrpura y el 60% de negro */
 
-    margin: 20px auto;
 }
 

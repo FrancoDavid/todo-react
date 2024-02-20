@@ -1,0 +1,20 @@
+aside {
+    background-color: #25283D;
+    color: #AFB2CA;
+
+    margin: 16px auto;
+    /* padding: 16px; */
+}
+
+aside input {
+    border: none;
+    padding: 16px;
+    background-color: #25283D;
+    color: white;
+
+    width: 100%;
+}
+
+aside input:focus, aside input:focus-visible {
+    border-color: white;
+}
