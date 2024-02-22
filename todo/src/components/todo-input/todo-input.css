@@ -1,13 +1,17 @@
-aside {
+.todo-input--container {
     background-color: #25283D;
     color: #AFB2CA;
 
     margin: 16px auto;
-    /* padding: 16px; */
+    max-width: 290px;
+
+    border-radius: 8px;
 }
 
-aside input {
+.todo-input--container input {
     border: none;
+    border-radius: 8px;
+    
     padding: 16px;
     background-color: #25283D;
     color: white;
@@ -15,6 +19,19 @@ aside input {
     width: 100%;
 }
 
-aside input:focus, aside input:focus-visible {
+.todo-input--container input:focus, aside input:focus-visible {
     border-color: white;
+}
+
+
+@media (min-width: 425px) {
+    .todo-input--container {
+        max-width: 385px;
+    }
+}
+
+@media (min-width: 768px) {
+    .todo-input--container {
+        max-width: 600px;
+    }
 }

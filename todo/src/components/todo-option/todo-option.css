@@ -1,9 +1,31 @@
-section {
+.todo-option--container {
     background-color: #25283D;
     color: #AFB2CA;
 
-    padding: 16px;
+    padding: 8px;
+    margin: 0 auto;
 
     display: flex;
     justify-content: space-between;
+
+    max-width: 290px;
+
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.todo-option--container aside span {
+    margin: 0 5px;
+}
+
+@media (min-width: 425px) {
+    .todo-option--container {
+        max-width: 385px;
+    }
+}
+
+@media (min-width: 768px) {
+    .todo-option--container {
+        max-width: 600px;
+    }
 }
