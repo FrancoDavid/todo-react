@@ -9,3 +9,11 @@ body {
   font-family: "Open Sans", "Fjalla One", sans-serif;
   font-optical-sizing: auto;
 }
+
+.hand-pointer {
+  cursor: pointer;
+}
+
+.hand-pointer:hover {
+  color:#4A78DF
+}

@@ -19,15 +19,16 @@ const TodoItem = ({ item }) => {
             <div>
                 <input
                     type="checkbox"
-                    value={item.isActive}
+                    checked={item.isActive}
                     onChange={handlerChange}>
                 </input>
-                <span>
+                <span className={item.isActive ? 'todo-item--overline' : ''}>
                     {item.text}
                 </span>
             </div>
             <div>
-                <img 
+                <img
+                    className='hand-pointer'
                     src="/img/cross-svgrepo-com (1).svg"
                     alt="Remove"
                     

@@ -6,16 +6,24 @@ import TodoItem from "../todo-item/todo-item";
 
 const TodoContainerItem = () => {
 
-    const { todoList } = useContext(TodoContext);
+    const { todoList, typeFilter } = useContext(TodoContext);
+
+    const filteredTodoList = todoList.filter(item => {
+            return (typeFilter === 'all') ||
+                (typeFilter === 'active' && !item.isActive) || 
+                (typeFilter === 'completed' && item.isActive);
+    });
 
     return (
-        <section>
-            { todoList.map((item, index) => (
-                <TodoItem
-                    key={index}
-                    item={item}
-                />
-            ))}
+         <section>
+            {
+                filteredTodoList.map((item, index) => (
+                    <TodoItem
+                        key={index}
+                        item={item}
+                    />
+                ))
+            }
         </section>
     );
 }

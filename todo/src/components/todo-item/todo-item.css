@@ -21,6 +21,10 @@
     margin-top: 5px;
 }
 
+.todo-item--overline {
+    text-decoration: line-through;
+}
+
 @media (min-width: 425px) {
     .todo-item--container {
         max-width: 385px;

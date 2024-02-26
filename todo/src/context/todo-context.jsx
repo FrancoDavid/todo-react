@@ -6,6 +6,7 @@ const TodoContext = createContext();
 const TodoProvider = ({children}) => {
 
     const [todoList, setTodoList] = useState([]);
+    const [typeFilter, setTypeFilter] = useState('all');
 
     const addTodo = (newTodo) => {
         setTodoList([
@@ -24,7 +25,7 @@ const TodoProvider = ({children}) => {
                 if (todo.id === todoId) {
                     return {
                         ...todo,
-                        isActive: !todo.isActive
+                        isActive: !todo.isActive,
                     };
 
                 } else {
@@ -32,14 +33,39 @@ const TodoProvider = ({children}) => {
                 }
             })
         );
-    }
+    };
 
     const removeTodo = (todoId) => {
         setTodoList(todoList.filter(todo => (todo.id !== todoId)));
+    };
+
+    const cleanerTodo = () => {
+        setTodoList(
+            todoList.map(todo => {
+              return {
+                ...todo,
+                isActive: false
+              };
+            })
+        );
+    };
+
+    const changeTypeFilter = (type) => {
+        setTypeFilter(type);
     }
 
     return (
-        <TodoContext.Provider value={{todoList, addTodo, toggleTodo, removeTodo}}>
+        <TodoContext.Provider value={{
+            todoList,
+            typeFilter,
+
+            addTodo,
+            toggleTodo,
+            removeTodo,
+            cleanerTodo,
+
+            changeTypeFilter
+        }}>
             {children}
         </TodoContext.Provider>
     );
