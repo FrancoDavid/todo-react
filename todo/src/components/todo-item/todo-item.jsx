@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import './todo-item.css'
 import { TodoContext } from '../../context/todo-context';
 
-const TodoItem = ({ item }) => {
+const TodoItem = ({ item, position }) => {
     const { toggleTodo, removeTodo } = useContext(TodoContext);
 
     const handlerChange = () => {
@@ -15,7 +15,7 @@ const TodoItem = ({ item }) => {
     }
 
     return (
-        <section className="todo-item--container">
+        <section className={`todo-item--container ${(position === 0) ? 'todo-item--rounded' : ''}`}>
             <div>
                 <input
                     type="checkbox"
