@@ -26,6 +26,7 @@ const TodoInput = () => {
             <input
                 type="text"
                 placeholder='Enter to create new job...'
+                maxLength={80}
                 value={todoItemNewName}
                 onKeyDown={handlerEnter}
                 onChange={handlerChange}>

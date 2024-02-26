@@ -13,6 +13,10 @@
     max-width: 290px;
 }
 
+.todo-item--container span {
+    text-transform: capitalize;
+}
+
 .todo-item--rounded {
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;

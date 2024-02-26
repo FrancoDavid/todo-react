@@ -1,4 +1,5 @@
 import React, { createContext, useState } from "react";
+
 import { v4 as uuidv4 } from 'uuid';
 
 const TodoContext = createContext();
@@ -9,12 +10,15 @@ const TodoProvider = ({children}) => {
     const [typeFilter, setTypeFilter] = useState('all');
 
     const addTodo = (newTodo) => {
+
+        const textLower =  newTodo.charAt(0).toUpperCase() + newTodo.slice(1).toLowerCase();
+        
         setTodoList([
             ...todoList,
             { 
                 id: uuidv4(),
                 isActive: false,
-                text: newTodo
+                text: textLower
             }
         ]);
     };

@@ -4,7 +4,7 @@ import { TodoContext } from '../../context/todo-context';
 
 const TodoOption = () => {
 
-    const { todoList, cleanerTodo, changeTypeFilter } = useContext(TodoContext);
+    const { todoList, typeFilter, cleanerTodo, changeTypeFilter } = useContext(TodoContext);
 
     const handlerClear = () => {
         cleanerTodo();
@@ -19,23 +19,22 @@ const TodoOption = () => {
             <aside>{todoList.length} items</aside>
             <aside>
                 <span
-                    className='hand-pointer'
+                    className={`${(typeFilter === 'all') ? 'todo-option--active' : ''}`}
                     onClick={() => handlerChange('all')}>
                         All
                 </span>
                 <span
-                    className='hand-pointer'
+                    className={`${(typeFilter === 'active') ? 'todo-option--active' : ''}`}
                     onClick={() => handlerChange('active')}>
                         Active
                 </span>
                 <span
-                    className='hand-pointer'
+                    className={`${(typeFilter === 'completed') ? 'todo-option--active' : ''}`}
                     onClick={() => handlerChange('completed')}>
                         Completed
                 </span>
             </aside>
             <aside
-                className='hand-pointer'
                 onClick={handlerClear}>
                 Clear completed
             </aside>

@@ -4,6 +4,7 @@ import './todo-item.css'
 import { TodoContext } from '../../context/todo-context';
 
 const TodoItem = ({ item, position }) => {
+    
     const { toggleTodo, removeTodo } = useContext(TodoContext);
 
     const handlerChange = () => {

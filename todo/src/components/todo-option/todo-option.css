@@ -16,6 +16,22 @@
 
 .todo-option--container aside span {
     margin: 0 5px;
+    cursor: pointer;
+}
+
+.todo-option--container aside span:hover {
+    color: #4A78DF;
+}
+
+.todo-option--active {
+    color: #4A78DF;
+}
+
+.todo-option--container aside:last-child {
+    cursor: pointer;
+}
+.todo-option--container aside:last-child:hover {
+    color: #4A78DF;
 }
 
 @media (min-width: 425px) {
