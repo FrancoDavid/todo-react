@@ -34,8 +34,12 @@ const TodoProvider = ({children}) => {
         );
     }
 
+    const removeTodo = (todoId) => {
+        setTodoList(todoList.filter(todo => (todo.id !== todoId)));
+    }
+
     return (
-        <TodoContext.Provider value={{todoList, addTodo, toggleTodo}}>
+        <TodoContext.Provider value={{todoList, addTodo, toggleTodo, removeTodo}}>
             {children}
         </TodoContext.Provider>
     );

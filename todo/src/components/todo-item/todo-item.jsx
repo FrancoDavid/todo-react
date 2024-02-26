@@ -1,16 +1,17 @@
 
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import './todo-item.css'
 import { TodoContext } from '../../context/todo-context';
 
 const TodoItem = ({ item }) => {
-
-    //  const [isActive, setActive] = useState(item.isActive);
-    const { toggleTodo } = useContext(TodoContext);
+    const { toggleTodo, removeTodo } = useContext(TodoContext);
 
     const handlerChange = () => {
-        console.log(item);
         toggleTodo(item.id);
+    }
+
+    const handlerClick = () => {
+        removeTodo(item.id);
     }
 
     return (
@@ -26,7 +27,11 @@ const TodoItem = ({ item }) => {
                 </span>
             </div>
             <div>
-                <img src="/img/cross-svgrepo-com (1).svg" alt="Remove"/>
+                <img 
+                    src="/img/cross-svgrepo-com (1).svg"
+                    alt="Remove"
+                    
+                    onClick={handlerClick}/>
             </div>
         </section>
     );
