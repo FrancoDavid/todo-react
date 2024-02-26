@@ -1,13 +1,12 @@
 
 import './todo-item.css'
 
-const TodoItem = () => {
-
+const TodoItem = ({ item }) => {
     return (
         <div className="todo-item--container">
             <div>
                 <input type="checkbox"></input>
-                <span>Item</span>
+                <span>{item.text}</span>
             </div>
             <div>
                 <img src="/img/cross-svgrepo-com (1).svg" alt="Remove"/>

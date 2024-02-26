@@ -1,12 +1,13 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
 import './App.css';
 
 import TodoHeader from './components/todo-header/todo-header';
 import TodoInput from './components/todo-input/todo-input';
-// import TodoItem from './components/todo-item/todo-item';
-// import TodoOption from './components/todo-option/todo-option';
-import { TodoContext, TodoProvider } from './context/todo-context';
+import TodoOption from './components/todo-option/todo-option';
+
+import { TodoProvider } from './context/todo-context';
+import TodoContainerItem from './components/todo-container-item/todo-container-item';
 
 function App() {
   return (
@@ -16,8 +17,8 @@ function App() {
             <TodoHeader />
             <TodoInput />
 
-            {/* <TodoItem />
-            <TodoOption /> */}
+            <TodoContainerItem />
+            <TodoOption />
         </section>
       </main>
     </TodoProvider>
