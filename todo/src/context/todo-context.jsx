@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import React, { createContext, useState } from "react";
 
 const TodoContext = createContext();
 
@@ -14,9 +14,9 @@ const TodoProvider = ({children}) => {
     };
 
     return (
-        <TodoProvider value={{addTodo}}>
+        <TodoContext.Provider value={{todoList, addTodo}}>
             {children}
-        </TodoProvider>
+        </TodoContext.Provider>
     );
 };
 
