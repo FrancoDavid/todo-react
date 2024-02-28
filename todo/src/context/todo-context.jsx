@@ -54,8 +54,20 @@ const TodoProvider = ({children}) => {
         );
     };
 
-    const changeTypeFilter = (type) => {
+    const changeTypeFilter = (type, hola) => {
         setTypeFilter(type);
+    };
+
+    const changeOrderTodo = (prev, next) => {
+        const list = [...todoList];
+        const itemDrag = list[prev];
+
+        list.splice(prev, 1);
+        list.splice(next, 0, itemDrag);
+
+        console.log(list);
+
+        setTodoList([...list]);
     }
 
     return (
@@ -67,6 +79,7 @@ const TodoProvider = ({children}) => {
             toggleTodo,
             removeTodo,
             cleanerTodo,
+            changeOrderTodo,
 
             changeTypeFilter
         }}>

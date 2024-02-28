@@ -1,9 +1,11 @@
 
 import { useContext } from 'react';
+
 import './todo-item.css'
+
 import { TodoContext } from '../../context/todo-context';
 
-const TodoItem = ({ item, position }) => {
+const TodoItem = ({ item, position, onDragStart, onDragEnter, onDragEnd }) => {
     
     const { toggleTodo, removeTodo } = useContext(TodoContext);
 
@@ -16,7 +18,15 @@ const TodoItem = ({ item, position }) => {
     }
 
     return (
-        <section className={`todo-item--container ${(position === 0) ? 'todo-item--rounded' : ''}`}>
+        <section
+            className={`todo-item--container ${(position === 0) ? 'todo-item--rounded' : ''}`}
+            
+            draggable
+
+            onDragStart={onDragStart}
+            onDragEnter={onDragEnter}
+            onDragEnd={onDragEnd}
+        >
             <div>
                 <input
                     type="checkbox"
