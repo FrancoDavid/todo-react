@@ -1,9 +1,15 @@
 
 import './todo-not-found.css';
 
-const TodoNotFound = () => {
+const TodoNotFound = ({ theme }) => {
+
     return (
-        <section className='todo-not-found--container'>
+        <section
+            className={
+                `todo-not-found--container
+                ${(theme === 'dark') ? 'todo-not-found--dark': 'todo-not-found--light'}`
+            }
+        >
             <p>No items found</p>
         </section>
     );

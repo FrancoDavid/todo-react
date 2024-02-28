@@ -1,6 +1,7 @@
 import React, { useContext, useRef } from "react";
 
 import { TodoContext } from "../../context/todo-context";
+import { TodoThemeContext } from "../../context/todo-theme-context";
 
 import TodoItem from "../todo-item/todo-item";
 import TodoNotFound from "../todo-not-found/todo-not-found";
@@ -8,6 +9,7 @@ import TodoNotFound from "../todo-not-found/todo-not-found";
 const TodoContainerItem = () => {
 
     const { todoList, typeFilter, changeOrderTodo } = useContext(TodoContext);
+    const { todoTheme } = useContext(TodoThemeContext);
 
     const filteredTodoList = todoList.filter(item => {
             return (typeFilter === 'all') ||
@@ -34,13 +36,16 @@ const TodoContainerItem = () => {
         <section>
             {   
                 filteredTodoList.length === 0 ? (
-                    <TodoNotFound />
+                    <TodoNotFound
+                        theme={todoTheme}
+                    />
                 ) :  (
                     filteredTodoList.map((item, index) => (
                         <TodoItem
                             key={index}
                             item={item}
                             position={index}
+                            theme={todoTheme}
 
                             onDragStart={(e) => handlerDragStart(e, index)}
                             onDragEnd={(e) => handlerDragEnd(e, index)}

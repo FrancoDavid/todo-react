@@ -1,7 +1,4 @@
 .todo-option--container {
-    background-color: #25283D;
-    color: #AFB2CA;
-
     padding: 8px;
     margin: 0 auto;
 
@@ -12,6 +9,16 @@
 
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
+}
+
+.todo-option--dark {
+    background-color: #25283D;
+    color: #AFB2CA;
+}
+
+.todo-option--light {
+    background-color: #fff;
+    color: #5161d7;
 }
 
 .todo-option--container aside span {

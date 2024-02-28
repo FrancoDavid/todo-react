@@ -1,19 +1,28 @@
 .todo-not-found--container {
-    background-color: #25283D;
-    color: #AFB2CA;
-
     padding: 21px;
     margin: 0 auto;
 
     display: flex;
     justify-content: center;
 
-    border-bottom: 2px solid #303448;
+    border-bottom: 2px solid;
 
     max-width: 290px;
 
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
+}
+
+.todo-not-found--dark {
+    background-color: #25283D;
+    color: #AFB2CA;
+    border-color: #303448;
+}
+
+.todo-not-found--light {
+    background-color: #fff;
+    color: #5161d7;
+    border-color: #fff;
 }
 
 @media (min-width: 425px) {

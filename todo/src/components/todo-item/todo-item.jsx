@@ -5,7 +5,7 @@ import './todo-item.css'
 
 import { TodoContext } from '../../context/todo-context';
 
-const TodoItem = ({ item, position, onDragStart, onDragEnter, onDragEnd }) => {
+const TodoItem = ({ item, position, onDragStart, onDragEnter, onDragEnd, theme }) => {
     
     const { toggleTodo, removeTodo } = useContext(TodoContext);
 
@@ -19,7 +19,11 @@ const TodoItem = ({ item, position, onDragStart, onDragEnter, onDragEnd }) => {
 
     return (
         <section
-            className={`todo-item--container ${(position === 0) ? 'todo-item--rounded' : ''}`}
+            className={
+                `todo-item--container
+                ${(position === 0) ? 'todo-item--rounded' : ''} 
+                ${(theme === 'dark') ? 'todo-item--dark' : 'todo-item--light'}`
+            }
             
             draggable
 

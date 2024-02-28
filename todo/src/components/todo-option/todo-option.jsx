@@ -1,10 +1,14 @@
 import { useContext } from 'react';
+
 import './todo-option.css';
+
 import { TodoContext } from '../../context/todo-context';
+import { TodoThemeContext } from '../../context/todo-theme-context';
 
 const TodoOption = () => {
 
     const { todoList, typeFilter, cleanerTodo, changeTypeFilter } = useContext(TodoContext);
+    const { todoTheme } = useContext(TodoThemeContext);
 
     const handlerClear = () => {
         cleanerTodo();
@@ -15,7 +19,12 @@ const TodoOption = () => {
     }
 
     return (
-        <section className="todo-option--container">
+        <section
+            className={
+                `todo-option--container
+                ${(todoTheme === 'dark') ? 'todo-option--dark ' : 'todo-option--light'}`
+            }
+        >
             <aside>{todoList.length} items</aside>
             <aside>
                 <span

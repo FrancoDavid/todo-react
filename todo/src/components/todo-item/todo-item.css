@@ -1,16 +1,25 @@
 .todo-item--container {
-    background-color: #25283D;
-    color: #AFB2CA;
-
     padding: 16px;
     margin: 0 auto;
 
     display: flex;
     justify-content: space-between;
 
-    border-bottom: 2px solid #303448;
+    border-bottom: 2px solid;
 
     max-width: 290px;
+}
+
+.todo-item--dark {
+    background-color: #25283D;
+    color: #AFB2CA;
+    border-color: #303448;;
+}
+
+.todo-item--light {
+    background-color: #fff;
+    color: #5161d7;
+    border-color: #F5F5F5
 }
 
 .todo-item--container span {

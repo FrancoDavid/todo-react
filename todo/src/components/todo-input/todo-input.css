@@ -1,7 +1,4 @@
 .todo-input--container {
-    background-color: #25283D;
-    color: #AFB2CA;
-
     margin: 16px auto;
     max-width: 290px;
 
@@ -13,10 +10,18 @@
     border-radius: 8px;
     
     padding: 16px;
-    background-color: #25283D;
-    color: white;
 
     width: 100%;
+}
+
+.todo-input--dark {
+    background-color: #25283D;
+    color: #AFB2CA;
+}
+
+.todo-input--light {
+    background-color: #FFFFFF;
+    color: #5161d7;
 }
 
 .todo-input--container input:focus, aside input:focus-visible {

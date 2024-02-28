@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import './App.css';
 
@@ -8,20 +8,23 @@ import TodoOption from './components/todo-option/todo-option';
 
 import { TodoProvider } from './context/todo-context';
 import TodoContainerItem from './components/todo-container-item/todo-container-item';
+import { TodoThemeProvider } from './context/todo-theme-context';
 
 function App() {
   return (
-    <TodoProvider>
+    <TodoThemeProvider>
       <main>
-        <section className='App-container--middle'>
-            <TodoHeader />
-            <TodoInput />
+        <section className='app-container--middle'>
+          <TodoProvider>
+              <TodoHeader />
+              <TodoInput />
 
-            <TodoContainerItem />
-            <TodoOption />
+              <TodoContainerItem />
+              <TodoOption />
+          </TodoProvider>
         </section>
       </main>
-    </TodoProvider>
+    </TodoThemeProvider>
   );
 }
 
