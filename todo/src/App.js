@@ -22,6 +22,9 @@ function App() {
               <TodoContainerItem />
               <TodoOption />
           </TodoProvider>
+          <aside className='app-container--footer'>
+            <h3>Drag and drop to reorder list</h3>
+          </aside>
         </section>
       </main>
     </TodoThemeProvider>
